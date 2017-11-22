@@ -15,10 +15,13 @@ SpeedwagonBot:
 
 ConsumerKey:
 XdJgymhQZ3FV7ecVnXRj0nUHB
+
 ConsumerSecret:
 67glpCgL9epmVr3sejm39m94SarWnfcZXNRhEFDkmbTTYuaV9w
+
 AccessToken:
 932883775436087296-ehtoMqyZgnYEaaYDN6nWinEEIFHOp7K
+
 AccessTokenSecret:
 83oTKx5R0Q0RLCXfzTNdJqJwmLYAdWZ0fdk60srMKytga
 
