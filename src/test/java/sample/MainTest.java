@@ -5,6 +5,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import twitter4j.TwitterException;
+import sample.*;
 
 /**
  * Created by Администратор on 23.11.2017.
