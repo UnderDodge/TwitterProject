@@ -21,20 +21,16 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>2.0</version>
                 <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>sample.Main</mainClass>
-                        </manifest>
-                    </archive>
+                    <mainClass>sample.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-	
+
     <dependencies>
 
         <dependency>
@@ -42,8 +38,6 @@
             <artifactId>twitter4j-core</artifactId>
             <version>4.0.4</version>
         </dependency>
-
-
 
         <dependency>
 
