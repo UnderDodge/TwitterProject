@@ -11,12 +11,12 @@ import twitter4j.TwitterException;
  */
 public class MainTest {
 
-    TwitterManager twitterManager = null;
 
+    /*
     @Before
     public void initTest(){
         try {
-            twitterManager = new TwitterManager("XdJgymhQZ3FV7ecVnXRj0nUHB","67glpCgL9epmVr3sejm39m94SarWnfcZXNRhEFDkmbTTYuaV9w", "932883775436087296-ehtoMqyZgnYEaaYDN6nWinEEIFHOp7K" , "83oTKx5R0Q0RLCXfzTNdJqJwmLYAdWZ0fdk60srMKytga");
+            TwitterManager twitterManager = twitterManager = new TwitterManager("XdJgymhQZ3FV7ecVnXRj0nUHB","67glpCgL9epmVr3sejm39m94SarWnfcZXNRhEFDkmbTTYuaV9w", "932883775436087296-ehtoMqyZgnYEaaYDN6nWinEEIFHOp7K" , "83oTKx5R0Q0RLCXfzTNdJqJwmLYAdWZ0fdk60srMKytga");
         } catch (TwitterException e) {
             e.printStackTrace();
         }
@@ -26,15 +26,27 @@ public class MainTest {
     public void endTest(){
         twitterManager =  null;
     }
+    */
 
     @Test(expected = TwitterException.class)
     public void firstTest(){
-        twitterManager.makeTwitterExeprionTest();
+        try {
+            TwitterManager twitterManager =  new TwitterManager("XdJgymhQZ3FV7ecVnXRj0nUHB","67glpCgL9epmVr3sejm39m94SarWnfcZXNRhEFDkmbTTYuaV9w", "932883775436087296-ehtoMqyZgnYEaaYDN6nWinEEIFHOp7K" , "83oTKx5R0Q0RLCXfzTNdJqJwmLYAdWZ0fdk60srMKytga");
+            twitterManager.makeTwitterExeprionTest();
+        } catch (TwitterException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Test
     public void secondTest(){
-        assertTrue(twitterManager.pow(5,5)==25.0);
+        try {
+            TwitterManager twitterManager =  new TwitterManager("XdJgymhQZ3FV7ecVnXRj0nUHB","67glpCgL9epmVr3sejm39m94SarWnfcZXNRhEFDkmbTTYuaV9w", "932883775436087296-ehtoMqyZgnYEaaYDN6nWinEEIFHOp7K" , "83oTKx5R0Q0RLCXfzTNdJqJwmLYAdWZ0fdk60srMKytga");
+            assertTrue(twitterManager.pow(5,5)==25.0);
+        } catch (TwitterException e) {
+            e.printStackTrace();
+        }
     }
 
 }
