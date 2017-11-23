@@ -10,6 +10,8 @@ public class TwitterManager {
 
     Twitter twitter;
 
+    PagableResponseList<User> followers = null;
+
     TwitterManager(String key1, String key2, String key3, String key4) throws TwitterException{
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
@@ -42,6 +44,42 @@ public class TwitterManager {
         }
         return str;
     }
+
+    public int getFollowersCount(){
+        try {
+            followers = twitter.getFollowersList(twitter.getId(), -1);
+            return followers.size();
+        } catch (TwitterException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public String getYourProfilePicture(){
+        try {
+            return twitter.users().showUser(twitter.getId()).getBiggerProfileImageURL();
+        } catch (TwitterException e) {
+            return null;
+        }
+    }
+
+    //this methods are just for Lab3, we need them to add some simple tests
+    public void makeTwitterExeprionTest(){
+        new TwitterException("test exeption");
+    }
+
+    public int quickMathsMultyply(int a, int b){
+        return a*b;
+    }
+    //this one too
+    public int quickMathsDevide(int a, int b){
+        return a/b;
+    }
+    //and this one....
+    public double pow(double a, double b){
+        return Math.pow(a,b);
+    }
+
 
 
 

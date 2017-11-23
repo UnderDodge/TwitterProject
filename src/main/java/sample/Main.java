@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -29,6 +30,8 @@ public class Main extends Application {
     Text key2 = new Text("Enter Consumer Key Secret : ");
     Text key3 = new Text("Enter Access Token : ");
     Text key4 = new Text("Enter Access Token Secret : ");
+    Text followersCount = new Text();
+    Text userName = new Text();
     Text errorExText = new Text();
 
     TextField consumerKey = new TextField("");
@@ -79,7 +82,7 @@ public class Main extends Application {
 
         TextArea textArea1 = new TextArea();
         textArea1.setPrefHeight(600);
-        textArea1.setPrefWidth(400);
+        textArea1.setPrefWidth(700);
         textArea1.setText(str.toString());
 
         mainCenteredGrid.add(textArea1,0,0);
@@ -87,7 +90,25 @@ public class Main extends Application {
 
     private Scene setMainScene(){
         //-----------------------------------------main scene layout
+        BorderPane topBorderPane = new BorderPane();
+        GridPane userInfo = new GridPane();
+        userInfo.setAlignment(Pos.CENTER);
+        userInfo.setVgap(20);
+        followersCount.setText("      Followers: " + String.valueOf(twitter.getFollowersCount()));
+        followersCount.setFill(Color.WHITE);
+        userInfo.add(new ImageView(twitter.getYourProfilePicture()), 0, 0);
+        try {
+            userName.setText(twitter.twitter.getScreenName());
+            userName.setFill(Color.WHITE);
+        } catch (TwitterException e) {
+            e.printStackTrace();
+        }
+        userInfo.add(userName,1,0);
+        userInfo.add(followersCount,2,0);
+
         GridPane topGrid = new GridPane();
+        topBorderPane.setTop(userInfo);
+        topBorderPane.setCenter(topGrid);
         topGrid.setHgap(20);
 
         topGrid.add(tagSearchButton,0,0);
@@ -108,7 +129,7 @@ public class Main extends Application {
         bottomGrid.setAlignment(Pos.BOTTOM_CENTER);
 
         mainBorderPane = new BorderPane();
-        mainBorderPane.setTop(topGrid);
+        mainBorderPane.setTop(topBorderPane);
         mainBorderPane.setCenter(mainCenteredGrid);
         mainBorderPane.setBottom(bottomGrid);
         mainBorderPane.setStyle("-fx-background: black");
@@ -177,7 +198,10 @@ public class Main extends Application {
     }
 
 
+
+
     public static void main(String[] args) {
+
         launch(args);
     }
 }
