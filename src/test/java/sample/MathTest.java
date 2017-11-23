@@ -26,7 +26,7 @@ public class MathTest {
     }
     */
 
-    /*
+    
     @Test
     public void first(){
         MathLab mathLab = new MathLab("Hey");
@@ -44,5 +44,5 @@ public class MathTest {
         MathLab mathLab = new MathLab("Hey");
         assertTrue(mathLab.name.equals("Hey"));
     }
-    */
+    
 }
