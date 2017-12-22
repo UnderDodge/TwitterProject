@@ -63,10 +63,14 @@ public class TwitterManager {
         }
     }
 
+
+
     //this methods are just for Lab3, we need them to add some simple tests
     public void makeTwitterExeprionTest(){
         new TwitterException("test exeption");
     }
+
+
 
     public int quickMathsMultyply(int a, int b){
         return a*b;
