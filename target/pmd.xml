@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.6.1" timestamp="2017-12-23T23:33:46.926">
+<file name="D:\IDEAmavenTwitterProject\src\test\java\sample\MainTest.java">
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="23" rule="UnusedImports" ruleset="Import Statements" package="sample" class="MainTest" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.junit.After'
+</violation>
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="24" rule="UnusedImports" ruleset="Import Statements" package="sample" class="MainTest" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.junit.Before'
+</violation>
+<violation beginline="9" endline="9" begincolumn="1" endcolumn="16" rule="ImportFromSamePackage" ruleset="Import Statements" package="sample" class="MainTest" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/imports.html#ImportFromSamePackage" priority="3">
+No need to import a type that lives in the same package
+</violation>
+</file>
+<file name="D:\IDEAmavenTwitterProject\src\test\java\sample\MathTest.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="16" rule="ImportFromSamePackage" ruleset="Import Statements" package="sample" class="MathTest" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/imports.html#ImportFromSamePackage" priority="3">
+No need to import a type that lives in the same package
+</violation>
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="23" rule="UnusedImports" ruleset="Import Statements" package="sample" class="MathTest" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.junit.After'
+</violation>
+<violation beginline="6" endline="6" begincolumn="1" endcolumn="24" rule="UnusedImports" ruleset="Import Statements" package="sample" class="MathTest" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.junit.Before'
+</violation>
+<violation beginline="7" endline="7" begincolumn="1" endcolumn="22" rule="UnusedImports" ruleset="Import Statements" package="sample" class="MathTest" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.junit.Test'
+</violation>
+</file>
+<file name="D:\IDEAmavenTwitterProject\src\test\java\sample\MockitoTest.java">
+<violation beginline="1" endline="53" begincolumn="1" endcolumn="3" rule="TooManyStaticImports" ruleset="Import Statements" package="sample" class="MockitoTest" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/imports.html#TooManyStaticImports" priority="3">
+Too many static imports may lead to messy code
+</violation>
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="34" rule="UnusedImports" ruleset="Import Statements" package="sample" class="MockitoTest" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'twitter4j.TwitterException'
+</violation>
+</file>
+</pmd>

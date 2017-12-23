@@ -31,6 +31,25 @@
                     <mainClass>sample.Main</mainClass>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.8</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <verbose>true</verbose>
+                    <minimumTokens>100</minimumTokens>
+                    <includeTests>true</includeTests>
+                    <targetJdk>1.8</targetJdk>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -40,8 +59,6 @@
             <groupId>org.twitter4j</groupId>
             <artifactId>twitter4j-core</artifactId>
             <version>4.0.4</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/twitter4j-core-4.0.4.jar</systemPath>
         </dependency>
 
         <dependency>
