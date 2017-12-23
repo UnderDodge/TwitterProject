@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import static org.hamcrest.CoreMatchers.instanceOf;
 import twitter4j.TwitterException;
 import sample.*;
 
@@ -75,6 +76,17 @@ public class MainTest {
             e.printStackTrace();
         }
         twitterManager.quickMathsDevide(10,0);
+    }
+
+    @Test
+    public void followerTest(){
+        TwitterManager twitterManager = null;
+        try {
+            twitterManager =  new TwitterManager("XdJgymhQZ3FV7ecVnXRj0nUHB","67glpCgL9epmVr3sejm39m94SarWnfcZXNRhEFDkmbTTYuaV9w", "932883775436087296-ehtoMqyZgnYEaaYDN6nWinEEIFHOp7K" , "83oTKx5R0Q0RLCXfzTNdJqJwmLYAdWZ0fdk60srMKytga");
+        } catch (TwitterException e) {
+            e.printStackTrace();
+        }
+        assertThat(twitterManager.getYourProfilePicture(), instanceOf(String.class));
     }
 
 }

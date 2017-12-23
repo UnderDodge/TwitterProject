@@ -18,6 +18,7 @@ public class MockitoTest {
         tm = mock(TwitterManager.class);
         when(tm.pow(2,5)).thenReturn(25.0);
         when(tm.getTimeline()).thenReturn(new StringBuffer("not connected to Twitter API, this is just a mock test"));
+        when(tm.getFollowersCount()).thenReturn(new Integer(0));
     }
 
     @Test
@@ -28,5 +29,11 @@ public class MockitoTest {
     @Test
     public void timeLineTestBeforeConnection(){
         assertThat(tm.getTimeline(),instanceOf(StringBuffer.class));
+    }
+
+    @Test
+    public void FollowerCount(){
+        assertTrue(tm.getFollowersCount()==0);
+        assertThat(tm.getFollowersCount(), instanceOf(Integer.class));
     }
 }
