@@ -2,9 +2,13 @@ package sample;
 
 import org.junit.Before;
 import org.junit.Test;
+import twitter4j.TwitterException;
+
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.instanceOf;
 
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 /**
@@ -19,7 +23,15 @@ public class MockitoTest {
         when(tm.pow(2,5)).thenReturn(25.0);
         when(tm.getTimeline()).thenReturn(new StringBuffer("not connected to Twitter API, this is just a mock test"));
         when(tm.getFollowersCount()).thenReturn(new Integer(0));
+        when(tm.quickMathsDevide(anyInt(),eq(0))).thenThrow(new ArithmeticException());
     }
+
+    @Test(expected = ArithmeticException.class)
+    public void exceptionTest(){
+        tm.quickMathsDevide(23,0);
+    }
+
+
 
     @Test
     public void powTest(){
@@ -36,4 +48,6 @@ public class MockitoTest {
         assertTrue(tm.getFollowersCount()==0);
         assertThat(tm.getFollowersCount(), instanceOf(Integer.class));
     }
+
+
 }
