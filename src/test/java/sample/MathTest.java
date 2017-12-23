@@ -1,10 +1,6 @@
 package sample;
 
-import sample.*;
-import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+
 
 /**
  * Created by Администратор on 23.11.2017.

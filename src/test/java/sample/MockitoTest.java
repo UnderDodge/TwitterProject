@@ -2,7 +2,6 @@ package sample;
 
 import org.junit.Before;
 import org.junit.Test;
-import twitter4j.TwitterException;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.instanceOf;

@@ -1,12 +1,9 @@
 package sample;
 
 import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import twitter4j.TwitterException;
-import sample.*;
 
 /**
  * Created by Администратор on 23.11.2017.
