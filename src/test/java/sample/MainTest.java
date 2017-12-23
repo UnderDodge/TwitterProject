@@ -39,10 +39,9 @@ public class MainTest {
         } catch (TwitterException e) {
             e.printStackTrace();
         }
-
         twitterManager.makeTwitterExeprionTest();
-
     }
+    */
 
     @Test
     public void secondTest(){
@@ -52,8 +51,8 @@ public class MainTest {
         } catch (TwitterException e) {
             e.printStackTrace();
         }
-        assertTrue(twitterManager.pow(5,5)==25.0);
-    }*/
+        assertTrue(twitterManager.pow(5,2)==25.0);
+    }
 
     @Test
     public void stringCheckTest(){
