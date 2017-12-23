@@ -25,7 +25,7 @@ public class Main extends Application {
     Button tagSearchButton = new Button("Search by tag");
     Button viewTimelineButton = new Button("Show Timeline");
 
-    Text creditsText = new Text("Speedwagon team, IO-44 v0.1");
+    Text creditsText = new Text("Speedwagon team, IO-44 v0.1 ¯\\_(ツ)_/¯");
     Text key1 = new Text("Enter Consumer Key : ");
     Text key2 = new Text("Enter Consumer Key Secret : ");
     Text key3 = new Text("Enter Access Token : ");
