@@ -24,34 +24,82 @@ public class TwitterManager {
     }
 
 
+    public void setNewTweet(String text){
+        int delayCount = 1;
+        while(true) {
+            try {
+                twitter.updateStatus(text);
+                break;
+            } catch (TwitterException e) {
+                System.out.println("Error");
+                try {
+                    Thread.sleep((int)(1000*Math.pow(delayCount,delayCount)));
+                    if(delayCount>=5){
+                        break;
+                    }else{
+                        delayCount++;
+                    }
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        }
+    }
+
+
 
     public StringBuffer getTimeline(){
         ResponseList<Status> list = null;
         StringBuffer str = new StringBuffer();
         int count = 0;
-        try {
-            list = twitter.getHomeTimeline();
-            for (Status st: list){
-                count++;
-                str.append("\n");
-                str.append("Tweet №"+count+": \n");
-                str.append(st.getUser().getName()+"\n"+st.getText());
-                System.out.println(st.getUser().getName() + "--------------" + st.getText());
-                str.append("\n");
+        int delayCount = 1;
+        while(true){
+            try {
+                list = twitter.getHomeTimeline();
+                for (Status st: list){
+                    count++;
+                    str.append("\n");
+                    str.append("Tweet №"+count+": \n");
+                    str.append(st.getUser().getName()+"\n"+st.getText());
+                    System.out.println(st.getUser().getName() + "--------------" + st.getText());
+                    str.append("\n");
+                    return str;
+                }
+            } catch (TwitterException e) {
+                System.out.println("Error");
+                try {
+                    Thread.sleep((int)(1000*Math.pow(delayCount,delayCount)));
+                    if(delayCount>=5){
+                        return null;
+                    }else{
+                        delayCount++;
+                    }
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
             }
-        } catch (TwitterException e) {
-            e.printStackTrace();
         }
-        return str;
     }
 
     public int getFollowersCount(){
-        try {
-            followers = twitter.getFollowersList(twitter.getId(), -1);
-            return followers.size();
-        } catch (TwitterException e) {
-            e.printStackTrace();
-            return 0;
+        int delayCount = 1;
+        while(true) {
+            try {
+                followers = twitter.getFollowersList(twitter.getId(), -1);
+                return followers.size();
+            } catch (TwitterException e) {
+                System.out.println("Error");
+                try {
+                    Thread.sleep((int) (1000 * Math.pow(delayCount, delayCount)));
+                    if (delayCount >= 5) {
+                        return 0;
+                    } else {
+                        delayCount++;
+                    }
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
+            }
         }
     }
 

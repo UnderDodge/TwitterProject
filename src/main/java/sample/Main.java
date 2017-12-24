@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -16,6 +17,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import twitter4j.TwitterException;
 
+import java.util.Optional;
+
 
 public class Main extends Application {
 
@@ -24,6 +27,7 @@ public class Main extends Application {
     Button loginButton = new Button("Login");
     Button tagSearchButton = new Button("Search by tag");
     Button viewTimelineButton = new Button("Show Timeline");
+    Button tweetButton = new Button("Make a tweet");
 
     Text creditsText = new Text("Speedwagon team, IO-44 v0.1 ¯\\_(ツ)_/¯");
     Text key1 = new Text("Enter Consumer Key : ");
@@ -71,6 +75,19 @@ public class Main extends Application {
         viewTimelineButton.setOnMouseClicked((e)->{
             setCenterAsTextField(twitter.getTimeline());
         });
+
+        tweetButton.setOnMouseClicked((e)->{
+            TextInputDialog dialog = new TextInputDialog("enter text here");
+            dialog.setTitle("New Tweet");
+            dialog.setHeaderText("Posting a tweet");
+            dialog.setContentText("Make a tweet:");
+            Optional<String> result = dialog.showAndWait();
+            if (result.isPresent() == true) {
+                twitter.setNewTweet(result.get());
+            }else{
+                System.out.println("No content was entered");
+            }
+        });
     }
 
 
@@ -113,6 +130,7 @@ public class Main extends Application {
 
         topGrid.add(tagSearchButton,0,0);
         topGrid.add(viewTimelineButton,1,0);
+        topGrid.add(tweetButton, 2,0);
         topGrid.setAlignment(Pos.CENTER);
         topGrid.setPadding(new Insets(30,30,30,30));
 
