@@ -5,10 +5,10 @@ script:
     - mvn pmd:check
 
 
-sudo: required
+#sudo: required
 
-services:
-  - docker
-
-before_install:
-  - docker build -t myimage:latest .
+#services:
+#  - docker
+#
+#before_install:
+#  - docker build -t myimage:latest .
