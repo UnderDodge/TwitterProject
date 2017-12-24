@@ -63,8 +63,8 @@ public class TwitterManager {
                     str.append(st.getUser().getName()+"\n"+st.getText());
                     System.out.println(st.getUser().getName() + "--------------" + st.getText());
                     str.append("\n");
-                    return str;
                 }
+                return str;
             } catch (TwitterException e) {
                 System.out.println("Error");
                 try {
