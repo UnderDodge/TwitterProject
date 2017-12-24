@@ -3,3 +3,12 @@ script:
     - mvn package
     - mvn jfx:jar
     - mvn pmd:check
+
+
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t myimage:latest .
